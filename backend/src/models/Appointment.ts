@@ -12,7 +12,8 @@ class Appointment {
   id: string;
 
   @Column('varchar')
-  provider: string;
+  // eslint-disable-next-line camelcase
+  provider_id: string;
 
   @Column('timestamp with time zone')
   date: Date;
