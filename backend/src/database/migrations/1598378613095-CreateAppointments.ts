@@ -15,7 +15,7 @@ export default class CreateAppointments1598378613095
             default: 'uuid_generate_v4()',
           },
           {
-            name: 'provider',
+            name: 'provider_id',
             type: 'uuid',
             isNullable: true,
           },
@@ -32,6 +32,16 @@ export default class CreateAppointments1598378613095
             name: 'updated_at',
             type: 'timestamp with time zone',
             default: 'now()',
+          },
+        ],
+        foreignKeys: [
+          {
+            name: 'AppointmentProvider',
+            referencedTableName: 'users',
+            referencedColumnNames: ['id'],
+            columnNames: ['provider_id'],
+            onDelete: 'SET NULL',
+            onUpdate: 'CASCADE',
           },
         ],
       }),
